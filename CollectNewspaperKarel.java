@@ -11,14 +11,80 @@
 import stanford.karel.*;
 
 public class CollectNewspaperKarel extends SuperKarel {
-
+	/*
+	 * precondition: Keral stands at the start position;
+	 * Postcondition: Keral returns to the start position; 
+	 * */
 	public void run(){
-		move();
-		turnRight();
-		move();
+		/*
+		 * Show the point which Keral wants to do.
+		 * */
+		while(frontIsClear())
+		{
+			move();
+		}
+		gotopickBeepers();// Process that Karel go to pick up Beepers;
+	}
+	/*
+	 * precondition: Keral stands at the start position;
+	 * Postcondition: Keral moves and passes the corner ; 
+	 * */
+	private void gotopickBeepers() {
+		if(frontIsBlocked()) {
+			turnRight();
+			changepointclearBeepers();
+		}
+	}
+	/*
+	 * precondition: Keral passes the corner and moving;
+	 * Postcondition: Keral turns and to find the Beeper ; 
+	 * */
+	private void changepointclearBeepers() {
+		while(leftIsBlocked()) {
+			move();
+		}
 		turnLeft();
+		clearnBeepers();
+	}
+	/*
+	 *precondition: Keral has turn to the point which Beeber's point;
+	 *Postcondition: Keral picks Beeper and turns around ;  
+	 * */
+	private void clearnBeepers() {
 		move();
-		pickBeeper();
+		while(beepersPresent()) {
+			pickBeeper();
+		}
+		moveBackward();
+	}
+	/*
+	 *precondition: Keral has been picked Beeper;
+	 *Postcondition: Keral Turn back ;  
+	 * */
+	private void moveBackward() {
+		turnAround();
+		onthewayback();
+	}
+	/*
+	 *precondition: Keral has been turned back;
+	 *Postcondition: Keral Keep to move ; 
+	 * */
+	private void onthewayback() {
+		while(frontIsClear()) {
+			move();
+		}
+		gotostartpoint();
+	}
+	/*
+	 * precondition: On the way back;
+	 *Postcondition: Keral Turns to start position ;
+	 * */
+	private void gotostartpoint() {
+		turnRight();
+		if(frontIsClear()) {
+			move();
+		}
+		turnRight();
 	}
 
 }

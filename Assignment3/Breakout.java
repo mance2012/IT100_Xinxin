@@ -132,9 +132,9 @@ public class Breakout extends GraphicsProgram {
 	private void play(){  
         
         /**
-         * 1、Start game with MouseClick
-         * 2、Paddle moving follow the Mouse
-         * 3、Create a ball in the middle of the screen
+         * 1.Start game with MouseClick
+         * 2.Paddle moving follow the Mouse
+         * 3.Create a ball in the middle of the screen
          */  
           
         //Game start 
@@ -149,9 +149,9 @@ public class Breakout extends GraphicsProgram {
         if (rgen.nextBoolean(0.5)) vx = -vx;  
         vy = 4.0;  
         /**
-         * 1. Moving the ball, and Y's speed fix, x's speed is random
-         * 2、If ball's position is under the paddle, the game will be over 
-         * 3、If ball hit the wall and then will change the direction 
+         * 1.Moving the ball, and Y's speed fix, x's speed is random
+         * 2.If ball's position is under the paddle, the game will be over 
+         * 3.If ball hit the wall and then will change the direction 
          */  
         while (true){  
             ball.move(vx,vy);  

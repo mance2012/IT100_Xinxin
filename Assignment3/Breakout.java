@@ -132,12 +132,9 @@ public class Breakout extends GraphicsProgram {
 	private void play(){  
         
         /**
-         * 1、等待单击鼠标，游戏开始 
-         * 2、关联球板跟随鼠标移动 
-         * 3、创建一个比赛用球，放置在屏幕中央 
-         * 4、移动球，碰到三面墙壁立刻反弹 
-         * 5、碰到底边游戏结束 
-         * 6、碰到球板反弹，板砖反弹，并清除板砖 
+         * 1、Start game with MouseClick
+         * 2、Paddle moving follow the Mouse
+         * 3、Create a ball in the middle of the screen
          */  
           
         //Game start 

@@ -2,7 +2,8 @@
  * File: Hangman.java
  * ------------------
  * Plays the game Hangman
- * by Derek Bikoff
+ * by Xinxin Ma
+ * With some intance in this link: http://www.stanford.edu/class/cs106a/lectures 
  */
 
 import acm.graphics.*;
